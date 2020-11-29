@@ -38,10 +38,6 @@
 /.eslintrc.json
 /.gitattributes
 /.htaccess
-/autoload.php
-/composer.json
-/composer.lock
-/example.gitignore
 /web/index.php
 /web/LICENSE.txt
 /web/README.txt

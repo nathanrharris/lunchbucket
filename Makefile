@@ -115,7 +115,7 @@ build: ##@workflow Build local environment.
 	make uli
 
 build-dev: ##@workflow Build development environment.
-	ssh ucla "cd $(DEV_DOCROOT); composer install; ./drush cim; ./drush updb; ./drush entup; ./drush cr;"
+	ssh lb "cd $(DEV_DOCROOT); composer install; ./drush cim; ./drush updb; ./drush entup; ./drush cr;"
 
 deploy: ##@workflow Deploy code, data, and assets to dev server.
 	make deploy-code
@@ -124,7 +124,7 @@ deploy: ##@workflow Deploy code, data, and assets to dev server.
 
 deploy-code: ##@workflow Deploy code to dev server.
 	@echo "Deploying code to dev"
-	ssh ucla "cd $(DEV_DOCROOT); git checkout develop; git pull origin develop; ./drush cr"
+	ssh lb "cd $(DEV_DOCROOT); git checkout develop; git pull origin develop; ./drush cr"
 
 deploy-data: ##@workflow Deploy data to dev server.
 	$(eval LOCAL_FILENAME = 'local-data.$(shell date +"%Y-%m-%d_%H:%M:%S").sql')
@@ -136,18 +136,18 @@ deploy-data: ##@workflow Deploy data to dev server.
 
 	make sql-dump | gzip -c > $(LOCAL_FILE).gz
 
-	scp $(LOCAL_FILE).gz ucla:$(DEV_DATA)/
+	scp $(LOCAL_FILE).gz lb:$(DEV_DATA)/
 
-	ssh ucla "cd $(DEV_DOCROOT); ./drush sql-dump | gzip -c > $(DEV_FILE).gz"
+	ssh lb "cd $(DEV_DOCROOT); ./drush sql-dump | gzip -c > $(DEV_FILE).gz"
 
-	ssh ucla "gunzip $(IMPORT_FILE).gz; cd $(DEV_DOCROOT); cat $(IMPORT_FILE) | ./drush sql-cli; gzip $(IMPORT_FILE)"
+	ssh lb "gunzip $(IMPORT_FILE).gz; cd $(DEV_DOCROOT); cat $(IMPORT_FILE) | ./drush sql-cli; gzip $(IMPORT_FILE)"
 
-	ssh ucla "cd $(DEV_DOCROOT); ./drush sqlsan; ./drush cr"
+	ssh lb "cd $(DEV_DOCROOT); ./drush sqlsan; ./drush cr"
 
 deploy-assets: ##@workflow Deploy assets to dev server.
 	@echo "Deploying assets to dev"
 	rsync -avz --progress $(LOCAL_ASSETS)/* $(DEV_HOST):$(DEV_ASSETS)/
-	ssh ucla "cd $(DEV_DOCROOT); ./drush cr"
+	ssh lb "cd $(DEV_DOCROOT); ./drush cr"
 
 fetch: ##@workflow Fetch code, data, and assets to dev server.
 	make fetch-code
@@ -170,9 +170,9 @@ fetch-data: ##@workflow Fetch data to dev server.
 
 	make sql-dump | gzip -c > $(LOCAL_FILE).gz
 
-	ssh ucla "cd $(DEV_DOCROOT); ./drush sql-dump | gzip -c > $(DEV_FILE).gz"
+	ssh lb "cd $(DEV_DOCROOT); ./drush sql-dump | gzip -c > $(DEV_FILE).gz"
 
-	scp ucla:$(DEV_FILE).gz $(LOCAL_DATA)/
+	scp lb:$(DEV_FILE).gz $(LOCAL_DATA)/
 
 	gunzip $(IMPORT_FILE).gz
 

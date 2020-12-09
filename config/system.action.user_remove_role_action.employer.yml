@@ -1,0 +1,14 @@
+uuid: ab32a9b2-1702-40e3-84a5-2ef02d18ebe6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.employer
+  module:
+    - user
+id: user_remove_role_action.employer
+label: 'Remove the Employer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: employer

@@ -1,0 +1,10 @@
+multiple_registration_path_employer: register/employer
+multiple_registration_url_employer: /user/register/employer
+multiple_registration_hidden_employer: 0
+multiple_registration_form_mode_register_employer: register
+multiple_registration_form_mode_edit_employer: register
+multiple_registration_path_worker: register/worker
+multiple_registration_url_worker: /user/register/worker
+multiple_registration_hidden_worker: 0
+multiple_registration_form_mode_register_worker: register
+multiple_registration_form_mode_edit_worker: register

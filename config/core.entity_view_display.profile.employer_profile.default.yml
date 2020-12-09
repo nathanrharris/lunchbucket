@@ -1,0 +1,21 @@
+uuid: cbf9afd2-9f05-4be0-a705-4578520736ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.employer_profile.field_company_name
+    - profile.type.employer_profile
+id: profile.employer_profile.default
+targetEntityType: profile
+bundle: employer_profile
+mode: default
+content:
+  field_company_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

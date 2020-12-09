@@ -1,0 +1,13 @@
+uuid: bbf8f620-1f42-4207-ab15-6c1e0e4b7b35
+langcode: en
+status: true
+dependencies: {  }
+id: worker_profile
+label: 'Worker Profile'
+display_label: 'Worker Profile'
+multiple: false
+registration: false
+roles:
+  worker: worker
+allow_revisions: false
+new_revision: false

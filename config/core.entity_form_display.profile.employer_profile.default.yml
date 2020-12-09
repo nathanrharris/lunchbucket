@@ -1,0 +1,22 @@
+uuid: e1945b27-4e62-41a9-8b6b-c62b976af6ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.employer_profile.field_company_name
+    - profile.type.employer_profile
+id: profile.employer_profile.default
+targetEntityType: profile
+bundle: employer_profile
+mode: default
+content:
+  field_company_name:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  is_default: true

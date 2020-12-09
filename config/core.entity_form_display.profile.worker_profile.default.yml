@@ -1,0 +1,22 @@
+uuid: c3491605-3b1d-4e87-9cf5-0560a632da94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.worker_profile.field_first_name
+    - profile.type.worker_profile
+id: profile.worker_profile.default
+targetEntityType: profile
+bundle: worker_profile
+mode: default
+content:
+  field_first_name:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  is_default: true

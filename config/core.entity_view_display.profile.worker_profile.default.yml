@@ -1,0 +1,21 @@
+uuid: 3d47e115-724a-4d82-b19d-a23cf5f0f4f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.worker_profile.field_first_name
+    - profile.type.worker_profile
+id: profile.worker_profile.default
+targetEntityType: profile
+bundle: worker_profile
+mode: default
+content:
+  field_first_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

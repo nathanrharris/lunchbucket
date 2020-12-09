@@ -1,0 +1,13 @@
+uuid: 931b0705-12ea-4418-b94e-1d64784da253
+langcode: en
+status: true
+dependencies: {  }
+id: employer_profile
+label: 'Employer Profile'
+display_label: 'Employer Profile'
+multiple: false
+registration: false
+roles:
+  employer: employer
+allow_revisions: false
+new_revision: false

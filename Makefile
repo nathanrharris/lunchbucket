@@ -192,7 +192,7 @@ fetch-assets: ##@workflow Fetch assets to dev server.
 	@make cr
 
 export-local-db: ##@workflow Export local data.
-	$(eval LOCAL_FILENAME = 'local-data.sql')
+	$(eval LOCAL_FILENAME = 'local-data.$(shell date +"%Y-%m-%d_%H:%M:%S").sql')
 
 	$(eval LOCAL_FILE = $(LOCAL_DATA)/$(LOCAL_FILENAME))
 

@@ -1,0 +1,20 @@
+name: 'Lunch Bucket Theme'
+description: 'Lunch Bucket Custom Theme'
+type: theme
+core: 8.x
+base theme: false
+version: VERSION
+libraries:
+  - lb/global
+
+ckeditor_stylesheets:
+  - css/styles.css
+
+regions:
+  header: "Header"
+  sidebar_first: "Sidebar First"
+  sidebar_second: "Sidebar Second"
+  content: "Main Content"
+  home_content: "Home Page Content"
+  footer: "Footer"
+  copyright: "Copyright"

@@ -13,10 +13,10 @@ use Drupal\Core\Block\BlockBase;
  *   admin_label = @Translation("Home Page Hero"),
  * )
  */
-class LunchBucketHomeHeroBlock extends BlockBase {
+class LunchBucketHomeHero extends BlockBase {
 
   public function build() {
-    return ['#markup' => 'Boooommmm....'];
+    return ['#theme' => 'block__home_hero'];
   }
 
 }

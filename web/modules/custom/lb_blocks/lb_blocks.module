@@ -1,0 +1,13 @@
+<?php
+
+function lb_blocks_theme($existing, $type, $theme, $path) {
+
+  return [
+    'block__home_hero' => [
+      'variables' => [
+        'work_link' => NULL,
+        'help_link' => NULL,
+      ],
+    ]
+  ];
+}

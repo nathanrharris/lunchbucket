@@ -1,0 +1,31 @@
+.home-hero {
+  background-image: url('../images/hero-factory.jpg');
+  background-position: center center;
+  background-size: cover;
+
+  &--work,
+  &--boss {
+    text-align: center;
+    margin-top: 12vh;
+    margin-bottom: 12vh;
+
+    img {
+      max-width: 100%
+    }
+
+    a {
+      text-decoration: none;
+      color: $gold;
+      font-family: $font-bold;
+      font-size: 48px;
+
+      @supports (-webkit-text-stroke: 2px $black) {
+        -webkit-text-stroke: 2px $black;
+      }
+
+      @supports (text-stroke: 2px $black) {
+        text-stroke: 2px $black;
+      }
+    }
+  }
+}

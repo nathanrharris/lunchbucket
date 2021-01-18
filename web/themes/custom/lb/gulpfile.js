@@ -1,5 +1,5 @@
 //load plugins
-var gulp             = require('gulp'),
+var gulp           = require('gulp'),
 	compass          = require('gulp-compass'),
 	autoprefixer     = require('gulp-autoprefixer'),
 	minifycss        = require('gulp-minify-css'),
@@ -11,7 +11,6 @@ var gulp             = require('gulp'),
 	plumber          = require('gulp-plumber'),
 	path             = require('path');
 
-//the title and icon that will be used for the Grunt notifications
 var notifyInfo = {
 	title: 'Gulp',
 	icon: path.join(__dirname, 'gulp.png')
@@ -38,7 +37,8 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('css'))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(minifycss())
-		.pipe(gulp.dest('css'));
+		.pipe(gulp.dest('css'))
+    .pipe(livereload());
 });
 
 //scripts
@@ -49,29 +49,18 @@ gulp.task('scripts', function() {
 		.pipe(gulp.dest('js'))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(uglify())
-		.pipe(gulp.dest('js'));
+		.pipe(gulp.dest('js'))
+    .pipe(livereload());
 });
 
 //watch
-gulp.task('live', function() {
+gulp.task('watch', function() {
 	livereload.listen();
 
 	//watch .scss files
-	gulp.watch('src/scss/**/*.scss', ['styles']);
+	gulp.watch('src/scss/**/*.scss', gulp.series('styles'));
 
 	//watch .js files
-	gulp.watch('src/js/**/*.js', ['scripts']);
+	gulp.watch('src/js/*.js', gulp.series('scripts'));
 
-	//reload when a template file, the minified css, or the minified js file changes
-	gulp.watch('templates/**/*.html', 'html/css/styles.min.css', 'html/js/main.min.js', function(event) {
-		gulp.src(event.path)
-			.pipe(plumber())
-			.pipe(livereload())
-			.pipe(notify({
-				title: notifyInfo.title,
-				icon: notifyInfo.icon,
-				message: event.path.replace(__dirname, '').replace(/\\/g, '/') + ' was ' + event.type + ' and reloaded'
-			})
-		);
-	});
 });

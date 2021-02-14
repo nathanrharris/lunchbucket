@@ -1,0 +1,22 @@
+uuid: cb3d95a9-c2f7-4107-a057-5c6cc248c74b
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - lb
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: lb_help
+theme: lb
+region: content
+weight: -8
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

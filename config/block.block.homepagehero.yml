@@ -1,0 +1,20 @@
+uuid: f07e9168-d3d4-4187-a19a-52459ffb4c99
+langcode: en
+status: true
+dependencies:
+  module:
+    - lb_blocks
+  theme:
+    - lb
+id: homepagehero
+theme: lb
+region: home_content
+weight: -9
+provider: null
+plugin: lb_home_page_hero
+settings:
+  id: lb_home_page_hero
+  label: 'Home Page Hero'
+  provider: lb_blocks
+  label_display: visible
+visibility: {  }

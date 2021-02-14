@@ -1,0 +1,8 @@
+uuid: f58f63f4-ff18-4bc6-aa87-fab56092b2bd
+langcode: en
+status: true
+dependencies: {  }
+id: image_left
+label: 'Image Left'
+revision: 0
+description: ''

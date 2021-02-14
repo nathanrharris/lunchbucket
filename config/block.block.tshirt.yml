@@ -1,0 +1,25 @@
+uuid: 8fc5081d-50fe-4b9c-b8c3-a530d3d3a0c4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:image_left:669a47e6-5b40-4892-9a96-ca763f0926b2'
+  module:
+    - block_content
+  theme:
+    - lb
+id: tshirt
+theme: lb
+region: home_content
+weight: -7
+provider: null
+plugin: 'block_content:669a47e6-5b40-4892-9a96-ca763f0926b2'
+settings:
+  id: 'block_content:669a47e6-5b40-4892-9a96-ca763f0926b2'
+  label: 'T Shirt'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

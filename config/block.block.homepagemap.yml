@@ -1,0 +1,20 @@
+uuid: 560b03e8-1296-4767-aceb-aaa6c0cae996
+langcode: en
+status: true
+dependencies:
+  module:
+    - lb_blocks
+  theme:
+    - lb
+id: homepagemap
+theme: lb
+region: home_content
+weight: -8
+provider: null
+plugin: lb_home_page_map
+settings:
+  id: lb_home_page_map
+  label: 'Home Page Map'
+  provider: lb_blocks
+  label_display: visible
+visibility: {  }

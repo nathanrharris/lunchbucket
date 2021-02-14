@@ -1,0 +1,23 @@
+uuid: 90ddcf93-3460-4df3-98d8-de3109cf5a05
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - lb
+_core:
+  default_config_hash: Q-4EcGAsu26ICu4ejEz0uE1zv4akpiaOsizxgZfAmEw
+id: lb_search
+theme: lb
+region: header
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+  page_id: node_search
+visibility: {  }

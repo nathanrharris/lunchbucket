@@ -1,0 +1,22 @@
+uuid: d37f9614-2f37-45dc-ae60-f1a8107279a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - lb
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: lb_messages
+theme: lb
+region: header
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

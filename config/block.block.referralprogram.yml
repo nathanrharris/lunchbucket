@@ -1,0 +1,25 @@
+uuid: d30cd46f-0985-4e99-8275-98397d552a83
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:image_right:68b419f3-2d4e-4a59-bffe-3b3f3db28ef0'
+  module:
+    - block_content
+  theme:
+    - lb
+id: referralprogram
+theme: lb
+region: home_content
+weight: -5
+provider: null
+plugin: 'block_content:68b419f3-2d4e-4a59-bffe-3b3f3db28ef0'
+settings:
+  id: 'block_content:68b419f3-2d4e-4a59-bffe-3b3f3db28ef0'
+  label: 'Referral Program'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

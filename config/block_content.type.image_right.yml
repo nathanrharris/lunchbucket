@@ -1,0 +1,8 @@
+uuid: 7f04a088-fde5-4dc8-a1b8-dc980aecb339
+langcode: en
+status: true
+dependencies: {  }
+id: image_right
+label: 'Image Right'
+revision: 0
+description: ''

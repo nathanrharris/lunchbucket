@@ -2,7 +2,7 @@ global:
   version: VERSION
   css:
     theme:
-      css/styles.min.css: {}
+      css/styles.css: {}
   dependencies:
     - core/jquery
     - core/drupal

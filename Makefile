@@ -259,7 +259,7 @@ composer-install: ##@dev-environment Run composer install
 composer-require: ##@dev-environment Run composer require (make composer-require package=drupal/foo)
 	@docker-compose exec -T php composer require $(package) -n --prefer-dist -v
 
-composer-remove: ##@dev-environment Run composer remove (make composer-require package=drupal/foo)
+composer-remove: ##@dev-environment Run composer remove (make composer-move package=drupal/foo)
 	@docker-compose exec -T php composer remove $(package) -v
 
 #

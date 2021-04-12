@@ -1,7 +1,7 @@
 name: 'Lunch Bucket Theme'
 description: 'Lunch Bucket Custom Theme'
 type: theme
-core: 8.x
+core_version_requirement: ^8 || ^9
 base theme: false
 version: VERSION
 libraries:

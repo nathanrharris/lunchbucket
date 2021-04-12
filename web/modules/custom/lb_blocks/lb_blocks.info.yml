@@ -2,4 +2,4 @@ name: Lunch Bucket Block
 description: Sets up a few custom blocks.
 package: Lunch Bucket
 type: module
-core: 8.x
+core_version_requirement: ^8 || ^9

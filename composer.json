@@ -17,9 +17,9 @@
     "require": {
         "composer/installers": "^1.2",
         "drupal/core": "8.9.13",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-project-message": "^8.8",
-        "drupal/core-recommended": "^8.8",
+        "drupal/core-composer-scaffold": "^9.0.0",
+        "drupal/core-project-message": "^9.0.0",
+        "drupal/core-recommended": "^9.0.0",
         "drupal/devel_entity_updates": "^3.0",
         "drupal/entity_reference_revisions": "^1.8",
         "drupal/multiple_registration": "^2.92",
@@ -92,5 +92,8 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "drupal/core-dev": "^9.0.0"
     }
 }

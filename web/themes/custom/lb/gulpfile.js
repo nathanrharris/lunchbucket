@@ -64,3 +64,6 @@ gulp.task('watch', function() {
 	gulp.watch('src/js/*.js', gulp.series('scripts'));
 
 });
+
+gulp.task('default', gulp.series('styles', 'scripts'));
+

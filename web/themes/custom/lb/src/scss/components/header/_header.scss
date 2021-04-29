@@ -5,11 +5,53 @@
     display: inline-block;
   }
 
-  #block-headermenu {
+  #block-lb-main-menu {
     float: right;
+    margin-top: 36px;
+
+    li {
+      display: inline-block;
+
+      &:after {
+        content: ' | ';
+        font-size: 18px;
+        color: $gold;
+        margin-left: 9px;
+        margin-right: 9px;
+      }
+    }
+
+    a {
+      font-size: 18px;
+      font-weight: bold;
+      color: $gold;
+      text-decoration: none;
+    }
   }
 
   #block-lb-account-menu {
     float: right;
+    margin-top: 36px;
+
+    li {
+      display: inline-block;
+
+      &:not(:last-child) {
+        &:after {
+          content: ' | ';
+          font-size: 18px;
+          color: $gold;
+          margin-left: 9px;
+          margin-right: 9px;
+        }
+      }
+    }
+
+    a {
+      font-size: 18px;
+      font-weight: bold;
+      color: $gold;
+      text-decoration: none;
+    }
   }
 }

@@ -1,0 +1,25 @@
+uuid: d3334c38-1247-464c-a37f-8e90190a0fd8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:467bcba4-83c4-4ce1-8c83-d0853970e01f'
+  module:
+    - block_content
+  theme:
+    - lb
+id: logo
+theme: lb
+region: header
+weight: -7
+provider: null
+plugin: 'block_content:467bcba4-83c4-4ce1-8c83-d0853970e01f'
+settings:
+  id: 'block_content:467bcba4-83c4-4ce1-8c83-d0853970e01f'
+  label: Logo
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

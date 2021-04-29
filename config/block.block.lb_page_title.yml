@@ -9,7 +9,7 @@ _core:
 id: lb_page_title
 theme: lb
 region: content
-weight: -10
+weight: -7
 provider: null
 plugin: page_title_block
 settings:

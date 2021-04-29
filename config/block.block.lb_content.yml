@@ -11,7 +11,7 @@ _core:
 id: lb_content
 theme: lb
 region: content
-weight: -6
+weight: -3
 provider: null
 plugin: system_main_block
 settings:

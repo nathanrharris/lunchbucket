@@ -16,7 +16,7 @@ use Drupal\Core\Block\BlockBase;
 class LunchBucketHomeMap extends BlockBase {
 
   public function build() {
-    return ['#markup' => 'Boooommmm Map....'];
+    return ['#theme' => 'block__home_map'];
   }
 
 }

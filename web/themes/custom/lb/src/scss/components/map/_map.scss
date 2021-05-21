@@ -1,0 +1,37 @@
+#map-wrapper {
+  background-color: $black;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+
+  .maps-container {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  #map-tabs {
+    margin-top: -41px;
+
+    &--state, &--city {
+      display: inline-block;
+      color: $gold;
+      background-color: $black;
+      font-weight: bold;
+      font-size: 24px;
+      padding: 8px 24px;
+      margin-right: 2px;
+      border-radius: 12px 12px 0 0;
+
+      border-top: 1px solid $gray;
+      border-left: 1px solid $gray;
+      border-right: 1px solid $gray;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  #map-cities {
+    display: none;
+  }
+}

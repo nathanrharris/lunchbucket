@@ -3,6 +3,11 @@ global:
   css:
     theme:
       css/styles.css: {}
+  js:
+    js/map/mapdata.js: {}
+    js/map/usmap.js: {}
+    js/map/mapdata-cities.js: {}
+    js/map/usmap-cities.js: {}
   dependencies:
     - core/jquery
     - core/drupal

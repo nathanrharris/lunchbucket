@@ -16,7 +16,13 @@ use Drupal\Core\Block\BlockBase;
 class LunchBucketHomeMap extends BlockBase {
 
   public function build() {
-    return ['#theme' => 'block__home_map'];
+
+    $attached['drupalSettings']['stateMap']['PA'] = '1,000,000 jobs!!!';
+
+    return [
+      '#theme' => 'block__home_map',
+      '#attached' => $attached,
+    ];
   }
 
 }

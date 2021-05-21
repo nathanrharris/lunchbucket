@@ -10,6 +10,7 @@
 
   #map-tabs {
     margin-top: -41px;
+    text-align: right;
 
     &--state, &--city {
       display: inline-block;
@@ -34,4 +35,5 @@
   #map-cities {
     display: none;
   }
+
 }

@@ -1,4 +1,4 @@
-var simplemaps_usmap_mapdata={
+var simplemaps_usmap_cities_mapdata={
   main_settings: {
     //General settings
 		width: "responsive", //or 'responsive'
@@ -22,7 +22,7 @@ var simplemaps_usmap_mapdata={
 		//Location defaults
 		location_description: "Location description",
     //location_color: "#FF0067",
-    location_color: "#FFB611",
+    location_color: "#FF0000",
     location_opacity: 0.8,
     location_hover_opacity: 1,
     location_url: "",
@@ -46,8 +46,7 @@ var simplemaps_usmap_mapdata={
 		manual_zoom: "no",
     back_image: "no",
     arrow_box: "no",
-    //navigation_size: "40",
-    navigation_size: "0",
+    navigation_size: "40",
     navigation_color: "#f7f7f7",
     navigation_border_color: "#636363",
     initial_back: "no",
@@ -69,7 +68,7 @@ var simplemaps_usmap_mapdata={
 
 		//Advanced settings
 		div: "map-cities",
-    auto_load: "yes",
+    auto_load: "no",
     rotate: "0",
     url_new_tab: "yes",
     images_directory: "default",

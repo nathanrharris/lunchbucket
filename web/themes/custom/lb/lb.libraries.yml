@@ -4,6 +4,7 @@ global:
     theme:
       css/styles.css: {}
   js:
+    js/scripts.js: {}
     js/map/mapdata.js: {}
     js/map/usmap.js: {}
     js/map/mapdata-cities.js: {}

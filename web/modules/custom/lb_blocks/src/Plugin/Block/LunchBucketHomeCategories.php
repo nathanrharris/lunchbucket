@@ -16,7 +16,23 @@ use Drupal\Core\Block\BlockBase;
 class LunchBucketHomeCategories extends BlockBase {
 
   public function build() {
-    return ['#markup' => 'Boooommmm Categories....'];
+
+    for ($x=1; $x<=4;$x++) {
+      $data[] = [
+        'category' => 'Category #' . $x,
+        'items' => [
+          'foo' => 'foo_url',
+          'bar' => 'bar_url',
+          'baz' => 'baz_url',
+        ],
+      ];
+    }
+
+
+    return [
+      '#theme' => 'block__home_categories',
+      '#data' => $data,
+    ];
   }
 
 }

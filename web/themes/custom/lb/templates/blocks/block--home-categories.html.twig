@@ -1,0 +1,14 @@
+<div class="home-categories">
+  <div class="content">
+    <div class="row">
+      {% for categories in data %}
+        <div class="col-4">
+          <h3 class="home-categories--category">{{ categories.category }}</h3>
+          {% for url, item in categories.items %}
+            <p><a href="{{ url }}" class="home-categories--link">{{ item }}</a></p>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

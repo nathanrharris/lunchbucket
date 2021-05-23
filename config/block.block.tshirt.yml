@@ -18,7 +18,7 @@ settings:
   id: 'block_content:669a47e6-5b40-4892-9a96-ca763f0926b2'
   label: 'T Shirt'
   provider: block_content
-  label_display: visible
+  label_display: '0'
   status: true
   info: ''
   view_mode: full

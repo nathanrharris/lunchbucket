@@ -24,6 +24,15 @@ class LunchBucketHomeCategories extends BlockBase {
           'foo' => 'foo_url',
           'bar' => 'bar_url',
           'baz' => 'baz_url',
+          'foo2' => 'foo_url',
+          'bar2' => 'bar_url',
+          'baz2' => 'baz_url',
+          'foo3' => 'foo_url',
+          'bar3' => 'bar_url',
+          'baz3' => 'baz_url',
+          'foo4' => 'foo_url',
+          'bar4' => 'bar_url',
+          'baz4' => 'baz_url',
         ],
       ];
     }

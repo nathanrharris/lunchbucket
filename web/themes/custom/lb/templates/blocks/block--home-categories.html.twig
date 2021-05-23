@@ -2,11 +2,13 @@
   <div class="content">
     <div class="row">
       {% for categories in data %}
-        <div class="col-4">
-          <h3 class="home-categories--category">{{ categories.category }}</h3>
-          {% for url, item in categories.items %}
-            <p><a href="{{ url }}" class="home-categories--link">{{ item }}</a></p>
-          {% endfor %}
+        <div class="col-4 home-categories--category-column">
+          <div class="home-categories--category-wrapper">
+            <h3 class="home-categories--category gold">{{ categories.category }}</h3>
+            {% for item, url in categories.items %}
+              <p><a href="{{ url }}" class="home-categories--link gold">{{ item }}</a></p>
+            {% endfor %}
+          </div>
         </div>
       {% endfor %}
     </div>

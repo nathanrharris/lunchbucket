@@ -4,8 +4,8 @@
   border-bottom: 1px solid $gray;
 
   .maps-container {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: $padding;
+    padding-bottom: $padding;
   }
 
   #map-tabs {

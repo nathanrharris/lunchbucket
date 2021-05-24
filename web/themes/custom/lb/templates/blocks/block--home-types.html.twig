@@ -1,0 +1,12 @@
+<div class="home-types">
+  <div class="content">
+    <div class="row">
+      {% for item in data %}
+        <div class="col-5">
+          <img src="{{ item.icon }}" />
+          {{ item.term }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

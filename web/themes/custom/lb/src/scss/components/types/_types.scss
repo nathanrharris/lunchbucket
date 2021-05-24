@@ -2,5 +2,13 @@
   background-color: $black;
   border-top: 1px solid $gray;
   border-bottom: 1px solid $gray;
-  height: 500px;
+  padding-bottom: $padding;
+
+  color: $gold;
+  font-size: 24px;
+
+  .col-5 {
+    text-align: center;
+    padding-top: $padding;
+  }
 }

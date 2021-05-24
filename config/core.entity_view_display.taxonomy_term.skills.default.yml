@@ -1,0 +1,30 @@
+uuid: 0b178f21-fc03-408f-a467-0cd9297a9497
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.skills.field_job_type
+    - taxonomy.vocabulary.skills
+  module:
+    - text
+id: taxonomy_term.skills.default
+targetEntityType: taxonomy_term
+bundle: skills
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_job_type:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

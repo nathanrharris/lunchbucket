@@ -1,0 +1,30 @@
+uuid: 6284942e-077f-4cae-bea4-3531f320442e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.certifications.field_job_type
+    - taxonomy.vocabulary.certifications
+  module:
+    - text
+id: taxonomy_term.certifications.default
+targetEntityType: taxonomy_term
+bundle: certifications
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_job_type:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

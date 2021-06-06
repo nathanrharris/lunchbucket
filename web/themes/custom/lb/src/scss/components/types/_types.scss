@@ -1,0 +1,14 @@
+.home-types {
+  background-color: $black;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+  padding-bottom: $padding;
+
+  color: $gold;
+  font-size: 24px;
+
+  .col-5 {
+    text-align: center;
+    padding-top: $padding;
+  }
+}

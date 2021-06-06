@@ -23,7 +23,7 @@
         "drupal/devel_entity_updates": "^3.0",
         "drupal/entity_reference_revisions": "^1.8",
         "drupal/multiple_registration": "^2.92",
-        "drupal/paragraphs": "^1.11",
+        "drupal/paragraphs": "^1.12",
         "drupal/profile": "^1.2",
         "drush/drush": "^10.3",
         "natxet/cssmin": "^3.0",

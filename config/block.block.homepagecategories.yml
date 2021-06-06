@@ -16,5 +16,5 @@ settings:
   id: lb_home_page_categories
   label: 'Home Page Categories'
   provider: lb_blocks
-  label_display: visible
+  label_display: '0'
 visibility: {  }

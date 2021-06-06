@@ -1,0 +1,13 @@
+.block--image-left, .block--image-right {
+  background-color: $gray-light;
+}
+
+.block--image-left_content, .block--image-right_content {
+  padding: $padding;
+}
+
+.block--image-left_image, .block--image-right_image {
+  img {
+    display: block;
+  }
+}

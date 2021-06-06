@@ -19,5 +19,10 @@ function lb_blocks_theme($existing, $type, $theme, $path) {
         'data' => NULL,
       ],
     ],
+    'block__home_types' => [
+      'variables' => [
+        'data' => NULL,
+      ],
+    ],
   ];
 }

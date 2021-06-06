@@ -1,0 +1,29 @@
+uuid: f1fe804b-0e63-42a2-a2b5-c945ce460f61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_job_type
+    - taxonomy.vocabulary.experience
+    - taxonomy.vocabulary.job_type
+id: taxonomy_term.experience.field_job_type
+field_name: field_job_type
+entity_type: taxonomy_term
+bundle: experience
+label: 'Job Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      job_type: job_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

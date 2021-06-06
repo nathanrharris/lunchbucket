@@ -16,7 +16,34 @@ use Drupal\Core\Block\BlockBase;
 class LunchBucketHomeTypes extends BlockBase {
 
   public function build() {
-    return ['#markup' => 'Boooommmm Types....'];
+
+    $query = \Drupal::entityQuery('taxonomy_term');
+    $query->condition('vid', "job_type");
+    $tids = $query->execute();
+    $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+
+    $data = [];
+
+    foreach ($terms as $term) {
+
+      $icon = $term->get('field_icon')->entity;
+
+      if ($icon !== NULL) {
+        $icon_url = file_create_url($icon->getFileUri());
+      }
+
+      $t = [
+        'term' => $term->name->value,
+        'icon' => $icon_url,
+      ];
+
+      $data[] = $t;
+    }
+
+    return [
+      '#theme' => 'block__home_types',
+      '#data' => $data,
+    ];
   }
 
 }

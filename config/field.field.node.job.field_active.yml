@@ -1,0 +1,23 @@
+uuid: a178517c-8cfd-431d-bcea-89d3f427f128
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_active
+    - node.type.job
+id: node.job.field_active
+field_name: field_active
+entity_type: node
+bundle: job
+label: Active
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Active
+  off_label: Inactive
+field_type: boolean

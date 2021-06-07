@@ -1,0 +1,5 @@
+name: Lunch Bucket Jobs
+description: Sets up custom functionality for jobs.
+package: Lunch Bucket
+type: module
+core_version_requirement: ^8 || ^9

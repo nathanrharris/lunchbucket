@@ -1,0 +1,67 @@
+<?php
+
+use \Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ReplaceCommand;
+
+function lb_jobs_form_alter(&$form, $form_state, $form_id) {
+
+//  print '<pre>'; print_r($form['field_skills']);
+
+  $form['field_skills']['#states']['visible'] = [
+    ':input[name="field_job_type"]' => ['!value' => '_none']
+  ];
+
+  $form['field_experience']['#states']['visible'] = [
+    ':input[name="field_job_type"]' => ['!value' => '_none']
+  ];
+
+  $form['field_certifications']['#states']['visible'] = [
+    ':input[name="field_job_type"]' => ['!value' => '_none']
+  ];
+
+  $form['field_job_type']['widget']['#ajax'] = [
+    'callback' => 'lb_jobs_ajax_callback',
+    'disable-refocus' => FALSE,
+    'event' => 'change',
+    'progress' => [
+      'type' => 'throbber',
+      'message' => 'Fetching Skills..',
+    ],
+  ];
+
+}
+
+function lb_jobs_ajax_callback(array &$form, FormStateInterface $form_state) {
+
+ $form['field_skills']['#options'] = [
+    '1' => 'foo',
+    '2' => 'bar',
+    '3' => 'baz',
+  ];
+
+  $form_state->setRebuild(TRUE);
+
+  $response = new AjaxResponse();
+  $response->addCommand(new ReplaceCommand("#edit-field-certifications-wrapper", ($form['field_skills'])));
+
+  return $response;
+}
+
+
+/*
+// Get the value from example select field and fill
+// the textbox with the selected text.
+public function myAjaxCallback(array &$form, FormStateInterface $form_state) {
+  // Prepare our textfield. check if the example select field has a selected option.
+  if ($selectedValue = $form_state->getValue('example_select')) {
+      // Get the text of the selected option.
+      $selectedText = $form['example_select']['#options'][$selectedValue];
+      // Place the text of the selected option in our textfield.
+      $form['output']['#value'] = $selectedText;
+  }
+  // Return the prepared textfield.
+  return $form['output'];
+}
+*/
+

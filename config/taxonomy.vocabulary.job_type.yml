@@ -5,4 +5,4 @@ dependencies: {  }
 name: 'Job Type'
 vid: job_type
 description: ''
-weight: 0
+weight: -9

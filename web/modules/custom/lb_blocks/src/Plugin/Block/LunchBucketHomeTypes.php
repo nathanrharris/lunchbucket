@@ -3,6 +3,7 @@
 namespace Drupal\lb_blocks\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\field\Entity\FieldConfig;
 
 
 /**
@@ -21,6 +22,11 @@ class LunchBucketHomeTypes extends BlockBase {
     $query->condition('vid', "job_type");
     $tids = $query->execute();
     $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+
+    $field_info = FieldConfig::loadByName('taxonomy_term', 'job_type', 'field_icon');
+    $image_uuid = $field_info->getSetting('default_image')['uuid'];
+    $image = \Drupal::service('entity.repository')->loadEntityByUuid('file', $image_uuid);
+    $icon_url = file_create_url($image->getFileUri());
 
     $data = [];
 

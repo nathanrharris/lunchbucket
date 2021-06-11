@@ -3,7 +3,7 @@
 namespace Drupal\lb_blocks\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-
+use Drupal\lb_blocks\LB_Blocks;
 
 /**
  * Sets up a 'Categories' block.
@@ -17,9 +17,24 @@ class LunchBucketHomeCategories extends BlockBase {
 
   public function build() {
 
-    for ($x=1; $x<=4;$x++) {
+    $data[] = [
+      'category' => 'Jobs by State',
+      'items' => LB_Blocks::getStates(),
+    ];
+
+    $data[] = [
+      'category' => 'Jobs by City',
+      'items' => LB_Blocks::getCities(),
+    ];
+
+    $category = [
+      3 => 'Jobs by Job Type',
+      4 => 'Jobs by Company',
+    ];
+
+    for ($x=3; $x<=4;$x++) {
       $data[] = [
-        'category' => 'Category #' . $x,
+        'category' => $category[$x],
         'items' => [
           'foo' => 'foo_url',
           'bar' => 'bar_url',
@@ -30,9 +45,6 @@ class LunchBucketHomeCategories extends BlockBase {
           'foo3' => 'foo_url',
           'bar3' => 'bar_url',
           'baz3' => 'baz_url',
-          'foo4' => 'foo_url',
-          'bar4' => 'bar_url',
-          'baz4' => 'baz_url',
         ],
       ];
     }

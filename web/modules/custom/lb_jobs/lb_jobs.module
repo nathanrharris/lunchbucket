@@ -4,64 +4,65 @@ use \Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
 
+const JOB_CRITERIA = ['skills', 'experience', 'certifications'];
+
 function lb_jobs_form_alter(&$form, $form_state, $form_id) {
 
-//  print '<pre>'; print_r($form['field_skills']);
+  $job_type = $form_state->getValue(['field_job_type']);
 
-  $form['field_skills']['#states']['visible'] = [
-    ':input[name="field_job_type"]' => ['!value' => '_none']
-  ];
+  foreach (JOB_CRITERIA as $crit) {
 
-  $form['field_experience']['#states']['visible'] = [
-    ':input[name="field_job_type"]' => ['!value' => '_none']
-  ];
+    $field = 'field_' . $crit;
 
-  $form['field_certifications']['#states']['visible'] = [
-    ':input[name="field_job_type"]' => ['!value' => '_none']
-  ];
+    $form[$field]['#states']['visible'] = [
+      ':input[name="field_job_type"]' => ['!value' => '_none']
+    ];
+
+    $form[$field]['#prefix'] = '<div id="' . $field  . '--ajax-wrapper">';
+    $form[$field]['#suffix'] = '</div>';
+
+    $form[$field]['widget']['#options'] = lb_jobs_options($crit, $job_type);
+  }
 
   $form['field_job_type']['widget']['#ajax'] = [
     'callback' => 'lb_jobs_ajax_callback',
     'disable-refocus' => FALSE,
     'event' => 'change',
+    'wrapper' => 'field-skills-ajax-wrapper',
     'progress' => [
       'type' => 'throbber',
-      'message' => 'Fetching Skills..',
+      'message' => 'Fetching options...',
     ],
   ];
-
 }
 
 function lb_jobs_ajax_callback(array &$form, FormStateInterface $form_state) {
 
- $form['field_skills']['#options'] = [
-    '1' => 'foo',
-    '2' => 'bar',
-    '3' => 'baz',
-  ];
-
-  $form_state->setRebuild(TRUE);
-
   $response = new AjaxResponse();
-  $response->addCommand(new ReplaceCommand("#edit-field-certifications-wrapper", ($form['field_skills'])));
+
+  foreach (JOB_CRITERIA as $crit) {
+
+    $field = 'field_' . $crit;
+
+    $response->addCommand(new ReplaceCommand('#' . $field . '--ajax-wrapper', ($form[$field])));
+  }
 
   return $response;
 }
 
+function lb_jobs_options($vocab, $job_type) {
 
-/*
-// Get the value from example select field and fill
-// the textbox with the selected text.
-public function myAjaxCallback(array &$form, FormStateInterface $form_state) {
-  // Prepare our textfield. check if the example select field has a selected option.
-  if ($selectedValue = $form_state->getValue('example_select')) {
-      // Get the text of the selected option.
-      $selectedText = $form['example_select']['#options'][$selectedValue];
-      // Place the text of the selected option in our textfield.
-      $form['output']['#value'] = $selectedText;
+  $query = \Drupal::entityQuery('taxonomy_term');
+  $query->condition('vid', $vocab);
+  $query->condition('status', 1);
+  $tids = $query->execute();
+  $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
+
+  foreach ($terms as $t) {
+    if ($t->get('field_job_type')->entity->id() == $job_type[0]['target_id']) {
+      $options[$t->id()] = $t->name->value;
+    }
   }
-  // Return the prepared textfield.
-  return $form['output'];
-}
-*/
 
+  return $options;
+}

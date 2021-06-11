@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.job.body
     - field.field.node.job.field_active
+    - field.field.node.job.field_address
     - field.field.node.job.field_certifications
     - field.field.node.job.field_experience
     - field.field.node.job.field_job_type
@@ -35,6 +36,7 @@ content:
     region: content
 hidden:
   field_active: true
+  field_address: true
   field_certifications: true
   field_experience: true
   field_job_type: true

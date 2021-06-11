@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.job.body
     - field.field.node.job.field_active
+    - field.field.node.job.field_address
     - field.field.node.job.field_certifications
     - field.field.node.job.field_experience
     - field.field.node.job.field_job_type
@@ -12,6 +13,7 @@ dependencies:
     - field.field.node.job.field_skills
     - node.type.job
   module:
+    - address
     - text
     - user
 id: node.job.default
@@ -35,6 +37,13 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+    region: content
+  field_address:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
     region: content
   field_certifications:
     weight: 105

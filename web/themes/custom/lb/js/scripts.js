@@ -7,6 +7,13 @@
    */
   Drupal.behaviors.mapToggle = {
     'attach': function (context) {
+
+      for (var key in drupalSettings.stateMap) {
+        simplemaps_usmap_mapdata.state_specific[key] = drupalSettings.stateMap[key];
+      }
+
+      simplemaps_usmap.load();
+
       $('#map-tabs--state').on('click', function() {
         $('#map-states').show();
         $('#map-cities').hide();

@@ -27,28 +27,15 @@ class LunchBucketHomeCategories extends BlockBase {
       'items' => LB_Blocks::getCities(),
     ];
 
-    $category = [
-      3 => 'Jobs by Job Type',
-      4 => 'Jobs by Company',
+    $data[] = [
+      'category' => 'Jobs by Type',
+      'items' => LB_Blocks::getTypes(),
     ];
 
-    for ($x=3; $x<=4;$x++) {
-      $data[] = [
-        'category' => $category[$x],
-        'items' => [
-          'foo' => 'foo_url',
-          'bar' => 'bar_url',
-          'baz' => 'baz_url',
-          'foo2' => 'foo_url',
-          'bar2' => 'bar_url',
-          'baz2' => 'baz_url',
-          'foo3' => 'foo_url',
-          'bar3' => 'bar_url',
-          'baz3' => 'baz_url',
-        ],
-      ];
-    }
-
+    $data[] = [
+      'category' => 'Jobs by Company',
+      'items' => LB_Blocks::getCompanies(),
+    ];
 
     return [
       '#theme' => 'block__home_categories',

@@ -139,7 +139,7 @@ var simplemaps_usmap_cities_mapdata={
       description: "default",
       color: "default",
       hover_color: "default",
-      url: "default"
+      url: "default",
     },
     NJ: {
       name: "New Jersey",

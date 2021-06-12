@@ -58,8 +58,10 @@ function lb_jobs_options($vocab, $job_type) {
   $tids = $query->execute();
   $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
 
+  $options = [];
+
   foreach ($terms as $t) {
-    if ($t->get('field_job_type')->entity->id() == $job_type[0]['target_id']) {
+    if (isset($job_type) && $t->get('field_job_type')->entity->id() == $job_type[0]['target_id']) {
       $options[$t->id()] = $t->name->value;
     }
   }

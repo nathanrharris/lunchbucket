@@ -3,6 +3,7 @@
 use \Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Entity\EntityInterface;
 
 const JOB_CRITERIA = ['skills', 'experience', 'certifications'];
 
@@ -67,4 +68,44 @@ function lb_jobs_options($vocab, $job_type) {
   }
 
   return $options;
+}
+
+function lb_jobs_node_presave(EntityInterface $entity) {
+  if ($entity->bundle() == 'job') {
+
+    $address = $entity->get('field_address')->first();
+
+    $locality = $address->getLocality();
+    $administrative_area = $address->getAdministrativeArea();
+
+    $query = \Drupal::entityQuery('lb_city_geocode')
+      ->condition('locality', $locality)
+      ->condition('administrative_area', $administrative_area);
+
+    $entityIds = $query->execute();
+
+    $entityId = array_pop($entityIds);
+
+    if (!isset($entityId)) {
+
+      $plugin_manager = \Drupal::Service('plugin.manager.geolocation.geocoder');
+
+      $google_plugin = $plugin_manager->getGeocoder('google_geocoding_api');
+
+      $result = $google_plugin->geocode("$locality, $administrative_area");
+
+      $lb_city_geocode = \Drupal::entityTypeManager()
+        ->getStorage('lb_city_geocode')
+        ->create([
+          'entity_id' => $entity->id(),
+          'locality' => $locality,
+          'administrative_area' => $administrative_area,
+          'lat' => $result['location']['lat'],
+          'lng' => $result['location']['lng'],
+          'created' => time(),
+        ]);
+
+      $lb_city_geocode->save();
+    }
+  }
 }

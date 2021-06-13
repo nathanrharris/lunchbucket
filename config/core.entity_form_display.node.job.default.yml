@@ -8,12 +8,15 @@ dependencies:
     - field.field.node.job.field_address
     - field.field.node.job.field_certifications
     - field.field.node.job.field_experience
+    - field.field.node.job.field_geolocation
     - field.field.node.job.field_job_type
     - field.field.node.job.field_qualifications
     - field.field.node.job.field_skills
     - node.type.job
   module:
     - address
+    - geolocation
+    - geolocation_address
     - path
     - text
 id: node.job.default
@@ -61,6 +64,42 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
+  field_geolocation:
+    weight: 4
+    settings: {  }
+    third_party_settings:
+      geolocation_address:
+        enable: true
+        address_field: field_address
+        geocoder: google_geocoding_api
+        settings:
+          label: Address
+          description: 'Enter an address to be localized.'
+          autocomplete_min_length: 1
+          component_restrictions:
+            route: ''
+            locality: ''
+            administrative_area: ''
+            postal_code: ''
+            country: ''
+          boundary_restriction:
+            south: ''
+            west: ''
+            north: ''
+            east: ''
+          region: ''
+        sync_mode: auto
+        button_position: LEFT_TOP
+        direction: one_way
+        ignore:
+          organization: false
+          address-line1: false
+          address-line2: false
+          locality: false
+          administrative-area: false
+          postal-code: false
+    type: geolocation_latlng
     region: content
   field_job_type:
     weight: 6

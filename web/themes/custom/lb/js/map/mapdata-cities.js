@@ -17,7 +17,7 @@ var simplemaps_usmap_cities_mapdata={
     //border_color: "#ffffff",
     border_color: "#666",
     all_states_inactive: "no",
-    all_states_zoomable: "no",
+    all_states_zoomable: "yes",
 
 		//Location defaults
 		location_description: "Location description",
@@ -475,25 +475,6 @@ var simplemaps_usmap_cities_mapdata={
       hover_color: "default",
       url: "default",
       hide: "yes"
-    }
-  },
-  locations: {
-    "0": {
-      name: "New York",
-      lat: 40.71,
-      lng: -74,
-      description: "default",
-      color: "default",
-      url: "default",
-      type: "default",
-      size: "default"
-    },
-    "1": {
-      name: "Anchorage",
-      lat: 61.2180556,
-      lng: -149.9002778,
-      color: "default",
-      type: "circle"
     }
   },
   labels: {

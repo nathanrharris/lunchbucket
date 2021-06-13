@@ -43,32 +43,26 @@ class LunchBucketHomeMap extends BlockBase {
           'hover_color' => "#444",
           'inactive' => 'yes',
         ];
-
       }
     }
 
+    $cityCounts = LB_Blocks::getCityCounts();
 
-/*
-  locations: {
-    "0": {
-      name: "New York",
-      lat: 40.71,
-      lng: -74,
-      description: "default",
-      color: "default",
-      url: "default",
-      type: "default",
-      size: "default"
-    },
-    "1": {
-      name: "Anchorage",
-      lat: 61.2180556,
-      lng: -149.9002778,
-      color: "default",
-      type: "circle"
+    foreach ($cityCounts as $city => $d) {
+
+      $attached['drupalSettings']['cityMap']['locations'][] = [
+        'name' => $city,
+        'lat' => $d['lat'],
+        'lng' => $d['lng'],
+        'description' => $d['description'],
+        'type' => 'circle',
+        'color' => '#FFB611',
+        'url' => 'http://www.foo.com',
+        'size' => 20,
+        'border_color' => '#666',
+      ];
+
     }
-  },
-*/
 
     return [
       '#theme' => 'block__home_map',

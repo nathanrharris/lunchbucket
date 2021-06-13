@@ -23,9 +23,8 @@
         $('#map-states').hide();
         $('#map-cities').show();
 
-        simplemaps_usmap_cities_mapdata.state_specific.PA.description = drupalSettings.stateMap.PA;
-
         if (simplemaps_usmap_cities.loaded != true) {
+          simplemaps_usmap_cities_mapdata.locations = drupalSettings.cityMap.locations;
           simplemaps_usmap_cities.load();
         }
       });

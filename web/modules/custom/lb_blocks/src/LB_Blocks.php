@@ -82,6 +82,8 @@ class LB_Blocks {
 
     //TODO: add join to node_field_data and check status/active
 
+    // TODO: add join to state table
+
     $query = $database->select('node__field_address', 'fa');
     $query->fields('fa', ['field_address_locality']);
     $query->addExpression('count(*)', 'fa_count');
@@ -94,10 +96,21 @@ class LB_Blocks {
     $data = array();
 
     while ($r = $result->fetchAssoc()) {
+
+      // TODO: add state to this query
+      $query_sub = $database->select('lb_city_geocode', 'g');
+      $query_sub->fields('g', ['lat', 'lng']);
+      $query_sub->condition('locality', $r['field_address_locality']);
+
+      $result_sub = $query_sub->execute();
+
+      $r_sub = $result_sub->fetchAssoc();
+
       $data[$r['field_address_locality']] = [
+        'count' => $r['fa_count'],
         'name' => $r['field_address_locality'],
-        'lat' => 0,
-        'lng' => 0,
+        'lat' => $r_sub['lat'],
+        'lng' => $r_sub['lng'],
         'description' => $r['fa_count'] . ' ' . $r['field_address_locality'] . ' jobs!!!',
       ];
     }

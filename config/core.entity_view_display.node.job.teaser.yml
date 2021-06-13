@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.job.field_address
     - field.field.node.job.field_certifications
     - field.field.node.job.field_experience
+    - field.field.node.job.field_geolocation
     - field.field.node.job.field_job_type
     - field.field.node.job.field_qualifications
     - field.field.node.job.field_skills
@@ -39,6 +40,7 @@ hidden:
   field_address: true
   field_certifications: true
   field_experience: true
+  field_geolocation: true
   field_job_type: true
   field_qualifications: true
   field_skills: true

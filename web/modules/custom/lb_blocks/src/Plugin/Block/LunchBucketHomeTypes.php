@@ -19,7 +19,9 @@ class LunchBucketHomeTypes extends BlockBase {
   public function build() {
 
     $query = \Drupal::entityQuery('taxonomy_term');
-    $query->condition('vid', "job_type");
+    $query->condition('vid', 'job_type');
+    $query->condition('status', 1);
+    $query->sort('weight');
     $tids = $query->execute();
     $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($tids);
 
@@ -41,6 +43,7 @@ class LunchBucketHomeTypes extends BlockBase {
       $t = [
         'term' => $term->name->value,
         'icon' => $icon_url,
+        'featured' => $term->get('field_featured')->value,
       ];
 
       $data[] = $t;

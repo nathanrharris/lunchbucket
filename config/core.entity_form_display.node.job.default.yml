@@ -10,7 +10,13 @@ dependencies:
     - field.field.node.job.field_experience
     - field.field.node.job.field_geolocation
     - field.field.node.job.field_job_type
+    - field.field.node.job.field_minimum_years_experience
+    - field.field.node.job.field_pay
+    - field.field.node.job.field_pay_max
+    - field.field.node.job.field_pay_type
+    - field.field.node.job.field_perks
     - field.field.node.job.field_qualifications
+    - field.field.node.job.field_schedule
     - field.field.node.job.field_skills
     - node.type.job
   module:
@@ -36,7 +42,7 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -54,13 +60,13 @@ content:
     type: address_default
     region: content
   field_certifications:
-    weight: 9
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_experience:
-    weight: 8
+    weight: 14
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -102,26 +108,65 @@ content:
     type: geolocation_latlng
     region: content
   field_job_type:
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_minimum_years_experience:
+    weight: 5
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_pay:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_pay_max:
+    weight: 8
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_pay_type:
     weight: 6
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
+  field_perks:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   field_qualifications:
-    weight: 5
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_schedule:
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   field_skills:
-    weight: 7
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
   path:
     type: path
-    weight: 14
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -129,21 +174,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 12
+    weight: 18
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 21
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 19
     region: content
     third_party_settings: {  }
   title:
@@ -156,7 +201,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 16
     settings:
       match_operator: CONTAINS
       size: 60

@@ -1,0 +1,39 @@
+uuid: 0f8aa379-7260-4333-9cf1-e6640e003310
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_pay_type
+field_name: field_pay_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Salary
+      label: Salary
+    -
+      value: Hourly
+      label: Hourly
+    -
+      value: 'Hourly Range'
+      label: 'Hourly Range'
+    -
+      value: DOE
+      label: DOE
+    -
+      value: 'Per Job'
+      label: 'Per Job'
+    -
+      value: 'Piece Work'
+      label: 'Piece Work'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

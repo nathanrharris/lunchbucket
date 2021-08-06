@@ -1,0 +1,23 @@
+uuid: 4b0710a3-59cf-4230-8b81-3040d47e0d2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pay
+    - node.type.job
+id: node.job.field_pay
+field_name: field_pay
+entity_type: node
+bundle: job
+label: Pay
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

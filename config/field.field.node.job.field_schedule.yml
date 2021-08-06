@@ -1,18 +1,18 @@
-uuid: abc200c2-585f-4446-94b8-86acf960473a
+uuid: 762dd643-a1b9-4314-a659-c59a4b67129e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_job_type
-    - taxonomy.vocabulary.job_type
-    - taxonomy.vocabulary.skills
-id: taxonomy_term.skills.field_job_type
-field_name: field_job_type
-entity_type: taxonomy_term
-bundle: skills
-label: 'Job Type'
+    - field.storage.node.field_schedule
+    - node.type.job
+    - taxonomy.vocabulary.schedule
+id: node.job.field_schedule
+field_name: field_schedule
+entity_type: node
+bundle: job
+label: Schedule
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      job_type: job_type
+      schedule: schedule
     sort:
       field: name
       direction: asc

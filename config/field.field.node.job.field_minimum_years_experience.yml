@@ -1,0 +1,23 @@
+uuid: a2905565-51ad-4651-8a8a-410bb61c33a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_minimum_years_experience
+    - node.type.job
+id: node.job.field_minimum_years_experience
+field_name: field_minimum_years_experience
+entity_type: node
+bundle: job
+label: 'Minimum years experience'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

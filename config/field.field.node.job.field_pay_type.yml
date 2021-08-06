@@ -1,0 +1,21 @@
+uuid: c6c7839a-55c5-42d9-9ecf-d2fa70e65299
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pay_type
+    - node.type.job
+  module:
+    - options
+id: node.job.field_pay_type
+field_name: field_pay_type
+entity_type: node
+bundle: job
+label: 'Pay Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

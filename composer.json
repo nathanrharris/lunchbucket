@@ -23,6 +23,7 @@
         "drupal/core-recommended": "^9.2.2",
         "drupal/devel_entity_updates": "^3.0",
         "drupal/entity_reference_revisions": "^1.8",
+        "drupal/flocblock": "^1.0",
         "drupal/geolocation": "^3.7",
         "drupal/multiple_registration": "^2.92",
         "drupal/paragraphs": "^1.12",

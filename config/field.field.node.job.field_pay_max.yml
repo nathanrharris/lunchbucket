@@ -1,0 +1,23 @@
+uuid: 5bfc7be2-fe54-4689-aa32-e38fd9a76e1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pay_max
+    - node.type.job
+id: node.job.field_pay_max
+field_name: field_pay_max
+entity_type: node
+bundle: job
+label: 'Pay Max'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

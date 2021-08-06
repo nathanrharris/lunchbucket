@@ -1,0 +1,5 @@
+name: Lunch Bucket Terms
+description: Adds some custom functionality to terms.
+package: Lunch Bucket
+type: module
+core_version_requirement: ^8 || ^9

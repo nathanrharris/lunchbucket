@@ -11,7 +11,13 @@ dependencies:
     - field.field.node.job.field_experience
     - field.field.node.job.field_geolocation
     - field.field.node.job.field_job_type
+    - field.field.node.job.field_minimum_years_experience
+    - field.field.node.job.field_pay
+    - field.field.node.job.field_pay_max
+    - field.field.node.job.field_pay_type
+    - field.field.node.job.field_perks
     - field.field.node.job.field_qualifications
+    - field.field.node.job.field_schedule
     - field.field.node.job.field_skills
     - node.type.job
   module:
@@ -42,5 +48,11 @@ hidden:
   field_experience: true
   field_geolocation: true
   field_job_type: true
+  field_minimum_years_experience: true
+  field_pay: true
+  field_pay_max: true
+  field_pay_type: true
+  field_perks: true
   field_qualifications: true
+  field_schedule: true
   field_skills: true

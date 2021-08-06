@@ -1,0 +1,38 @@
+<?php
+
+function lb_terms_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  if ($form_id == 'taxonomy_overview_terms') {
+    foreach ($form['terms'] as $key => $val) {
+      if (preg_match('/^tid/', $key)) {
+
+        $tid = $form['terms'][$key]['term']['tid']['#value'];
+
+        if ($tid) {
+          $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+
+          if (isset($term) && ($term->hasField('field_job_type'))) {
+            $job_type_term = $term->get('field_job_type')->first()->entity;
+
+            if (isset($job_type_term)) {
+              $job_type = $job_type_term->get('name')->value;
+
+              $form['terms'][$key]['term']['#title'] = $job_type . ': ' . $form['terms'][$key]['term']['#title'];
+            }
+          }
+        }
+      }
+    }
+
+    $form['actions']['group_by_job_type']['#type'] = 'submit';
+    $form['actions']['group_by_job_type']['#submit'] = ['lb_terms_submitGroupTerms'];
+    $form['actions']['group_by_job_type']['#value'] = 'Group by Job Type';
+  }
+}
+
+function lb_terms_submitGroupTerms() {
+  \Drupal::messenger()->addStatus(t('This is a successful message.'));
+
+  //TODO add group functionality here
+}
+
